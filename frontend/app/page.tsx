@@ -6,7 +6,7 @@ import axios from 'axios';
 interface User {
   _id: string;
   name: string;
-  password: string; // Se você precisar deste campo
+  password: string;
 }
 
 const HomePage = () => {
@@ -58,12 +58,6 @@ const HomePage = () => {
           Cadastrar
         </button>
       </form>
-      <h2 className="text-2xl font-semibold mt-6">Usuários Cadastrados</h2>
-      <ul className="mt-4">
-        {users.map((user) => (
-          <li key={user._id} className="border-b border-gray-300 py-2">{user.name}</li>
-        ))}
-      </ul>
     </div>
   );
 };
