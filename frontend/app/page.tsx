@@ -2,6 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './styles/globals.scss';
+import './styles/page.scss';
+import RegisterForm from './components/RegisterForm';
+import UserList from './components/UserList';
 
 interface User {
   _id: string;
@@ -32,32 +36,15 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-4">Cadastro de Usuários</h1>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <input
-          type="text"
-          placeholder="Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="border border-gray-300 p-2 mb-4 w-full rounded"
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="border border-gray-300 p-2 mb-4 w-full rounded"
-        />
-        <button 
-          type="submit" 
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-        >
-          Cadastrar
-        </button>
-      </form>
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-900 text-white">
+      <h1 className="text-4xl font-bold mb-6">Register</h1>
+      <RegisterForm 
+        name={name}
+        password={password}
+        setName={setName}
+        setPassword={setPassword}
+        onSubmit={handleSubmit}
+      />
     </div>
   );
 };
