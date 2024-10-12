@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/globals.scss';
 import './styles/page.scss';
 import RegisterForm from './components/RegisterForm';
-import UserList from './components/UserList';
+import React from 'react';
 
 interface User {
   _id: string;
@@ -16,13 +16,15 @@ interface User {
 const HomePage = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [age, setAge] = useState<number>(0);
   const [users, setUsers] = useState<User[]>([]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await axios.post('/api/users', { name, password });
+    await axios.post('/api/users', { name, password, age }); 
     setName('');
     setPassword('');
+    setAge(0);
     fetchUsers();
   };
 
@@ -41,8 +43,10 @@ const HomePage = () => {
       <RegisterForm 
         name={name}
         password={password}
+        age={age}
         setName={setName}
         setPassword={setPassword}
+        setAge={setAge}
         onSubmit={handleSubmit}
       />
     </div>
