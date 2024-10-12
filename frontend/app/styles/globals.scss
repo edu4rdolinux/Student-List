@@ -9,3 +9,7 @@
 body {
     background-color: #111213;
 }
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 0;
+}
