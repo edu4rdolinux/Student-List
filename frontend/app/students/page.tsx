@@ -30,8 +30,9 @@ export default function Page() {
           <li>No users found.</li>
         ) : (
           users.map(user => (
-            <li key={user._id}>
-              {user.name} (Age: {user.age})
+            <li className='flex flex-row gap-8' key={user._id}>
+              <li>{user.name}<br/></li>
+              <li>Age: {user.age}</li>
             </li>
           ))
         )}
