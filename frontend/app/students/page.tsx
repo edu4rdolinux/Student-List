@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import RegisterButton from '../components/RegisterButton';
+import Link from 'next/link';
 
 interface User {
   _id: string;
@@ -36,7 +38,10 @@ export default function Page() {
             </li>
           ))
         )}
-      </ul>
+      </ul><br/>
+      <Link href="/">
+          <RegisterButton ButtonText="Register Other Student"/>
+      </Link>
     </div>
   );
 }

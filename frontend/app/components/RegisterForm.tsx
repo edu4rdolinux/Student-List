@@ -1,5 +1,6 @@
 import React from 'react';
 import InputField from './InputField';
+import RegisterButton from './RegisterButton';
 
 interface RegisterFormProps {
   name: string;
@@ -17,12 +18,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ name, password, age, setNam
       <InputField type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       <InputField type="number" placeholder="Age" value={age} onChange={(e) => setAge(Number(e.target.value))} />
       <InputField type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button 
-        type="submit" 
-        className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded transition w-full"
-      >
-        Register
-      </button>
+      <RegisterButton ButtonText="Register"/>
     </form>
   </div>
 );
