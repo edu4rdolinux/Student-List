@@ -26,7 +26,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-900 text-white">
-      <h1 className="text-4xl font-bold mb-6">Registered Users</h1>
+      <h1 className="text-4xl font-bold mb-6">Registered Students</h1>
       <ul className="list-disc pl-5">
         {users.length === 0 ? (
           <li>No users found.</li>
