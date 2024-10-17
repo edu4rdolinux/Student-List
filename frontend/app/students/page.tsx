@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import RegisterButton from '../components/RegisterButton';
 import Link from 'next/link';
@@ -33,14 +33,15 @@ export default function Page() {
         ) : (
           users.map(user => (
             <li className='flex flex-row gap-8' key={user._id}>
-              <li>{user.name}<br/></li>
-              <li>Age: {user.age}</li>
+              <span>{user.name}<br/></span>
+              <span>Age: {user.age}</span>
             </li>
           ))
         )}
-      </ul><br/>
+      </ul>
+      <br/>
       <Link href="/">
-          <RegisterButton ButtonText="Register Other Student"/>
+        <RegisterButton ButtonText="Register Other Student"/>
       </Link>
     </div>
   );
