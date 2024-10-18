@@ -18,3 +18,4 @@ const RegisterButton: React.FC<Props> = ({ ButtonText }) => {
 }
 
 export default RegisterButton;
+// FAZ O L
